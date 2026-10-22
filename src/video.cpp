@@ -827,10 +827,11 @@ namespace video {
       {
         // SDR-specific options
         {"profile"s, [](const config_t &cfg) {
-           if (cfg.profile == 66) return "baseline"s;
-           if (cfg.profile == 77) return "main"s;
-           return "high"s;
-         }},
+            // 【修改这里的判断逻辑】改为读取服务端的全局配置 config::video.h264_profile
+            if (config::video.h264_profile == 66) return "baseline"s;
+            if (config::video.h264_profile == 77) return "main"s;
+            return "high"s;
+          }},
       },
       {},  // HDR-specific options
       {},  // YUV444 SDR-specific options
