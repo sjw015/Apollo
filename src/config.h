@@ -28,6 +28,7 @@ namespace config {
 
     int hevc_mode;
     int av1_mode;
+    int h264_profile{100};
 
     int min_threads;  // Minimum number of threads/slices for CPU encoding
 
